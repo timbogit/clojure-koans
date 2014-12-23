@@ -21,7 +21,12 @@
       (recur (rest r) (conj result (first r))))))
 
 (defn factorial [n]
-  __)
+  (reduce * (range 1 (inc n))))
+;  (loop [m n
+;         res 1]
+;    (if (< n 2)
+;      res
+;      (recur (dec m) (* m res)))))
 
 (meditations
   "Recursion ends with a base case"
@@ -49,10 +54,10 @@
   (= 6 (factorial 3))
 
   "And eventually you must think harder"
-  (= 24 (factorial 4))
+  (= 24 (factorial 4)))
 
-  "You can even deal with very large numbers"
-  (< 1000000000000000000000000N (factorial 1000N))
+;;  "You can even deal with very large numbers"
+;;  (< 100000000000000000000000000000N (factorial 1000N))
 
-  "But what happens when the machine limits you?"
-  (< 1000000000000000000000000N (factorial 100003N)))
+;;  "But what happens when the machine limits you?"
+;;  (< 1000000000000000000000000N (factorial 100003N)))
